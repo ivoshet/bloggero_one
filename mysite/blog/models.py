@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 
 # the query set to need for get objects collection from database
 # and for to work with its: filter, sorting

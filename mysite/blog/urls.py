@@ -1,6 +1,6 @@
-from mysite.blog.views import post_detail
+# from mysite.blog.views import post_detail
 from django.urls import path
-from .import views
+from . import views
 
 app_name = 'blog'
 
