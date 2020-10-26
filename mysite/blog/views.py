@@ -31,8 +31,8 @@ def post_detail(request, year, month, day, post):
     # for comments
     comments = post.comments.filter(active=True)
     new_comment = None
+    comment_form = CommentForm(data=request.POST)
     if request.method == 'POST':
-        comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             new_comment = comment_form.save(commit=False)
             new_comment.post = post
@@ -44,7 +44,7 @@ def post_detail(request, year, month, day, post):
                       'post': post,
                       'comments': comments,
                       'new_comment': new_comment,
-                      'comment_form': comment_form,
+                      'comment_form': comment_form
                   })
 
 
