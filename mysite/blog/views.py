@@ -5,6 +5,7 @@ from django.views.generic import ListView
 from .forms import EmailPostForm, CommentForm
 from django.core.mail import send_mail
 
+
 # def post_list(request):
 #     object_list = Post.published.all()
 #     paginator = Paginator(object_list, 1)
