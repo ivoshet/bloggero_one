@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from taggit.managers import TaggableManager
 
 # the query set to need for get objects collection from database
 # and for to work with its: filter, sorting
@@ -30,6 +31,8 @@ class Post(models.Model):
         max_length=10, choices=STATUS_CHOICES, default='draft')
     objects = models.Manager()
     published = PublishedManager()
+    # add tag features
+    tags = TaggableManager()
 
     class Meta:
         ordering = ('-publish',)
