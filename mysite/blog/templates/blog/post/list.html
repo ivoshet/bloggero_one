@@ -3,7 +3,11 @@
   My blog
 {% endblock %}
 {% block content %}
-<h1>My blog </h1>
+<h1>
+  {% comment %} <a href="{% url "blog:post_list"%}"> {% endcomment %}
+    My blog
+  {% comment %} </a> {% endcomment %}
+</h1>
   {% if tag %}
     <h2>Posts tagged with "{{tag.name}}"</h2>
   {% endif %}
